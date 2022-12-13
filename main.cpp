@@ -10,7 +10,7 @@ void outArray(std::vector<int> array, int n) {
     int len = array.size();
     std::cout << n <<"." << " " ;
     for (int i = 0; i < len; i++) {
-        std::cout << array[i] << " ";     /// по индексу достаем элемент
+        std::cout << array[i] << " ";     /// по индексу достаем(обращаемся к элементу) элемент
     }
     std::cout << std::endl;
 }
@@ -19,13 +19,13 @@ int main() {
     std::vector<int> testArray;
     std::vector<Car> circles;
     for (int i = 16; i > 0; i--) {
-        testArray.push_back(i);                             /// добавляем в конец массива эллемент - .push_back()
+        testArray.push_back(i);                             /// push_back() добавляет в конец массива(vector) эллемент
     }
     outArray(testArray, 1);
     testArray.erase(testArray.begin() + 7);         /// erase Удаляет элемент или диапазон элементов в векторе из заданных позиций
-    outArray(testArray, 2);                       // исчезла 9
+    outArray(testArray, 2);                         // исчезла 9
     testArray.insert(testArray.begin() + 7, 9);  /// insert Вставляет элемент или несколько элементов в вектор по заданному индексу
-    outArray(testArray, 3);                       // вернулась 9
+    outArray(testArray, 3);                         // вернулась 9
     circles.emplace_back("Nissan",20);   /// emplace_back Добавляет элемент, созданный на месте (т.е. мы создаем новый объект указанного типа (здесь Car)), в конец вектора.
     testArray.emplace_back(20);                             /// Добавляет элемент, созданный на месте (т.е. мы создаем новый объект указанного типа (здесь int)), в конец вектора.
     outArray(testArray, 4);
@@ -40,7 +40,7 @@ int main() {
     testArray[0] = 9999;                                    /// оператор присваивания
     outArray(testArray, 5);
     std::cout <<"Size of array: " << testArray.size() << std::endl;
-    testArray.clear();                                      /// Очищает vector (т.е. в нем ничего не лежит, он пустой)
+    testArray.clear();                                      /// clear Очищает vector (т.е. в нем ничего не лежит, он пустой)
     std::cout << "Size of array: " << testArray.size();
 
 
